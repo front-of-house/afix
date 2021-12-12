@@ -6,7 +6,7 @@
   "types": "index.d.ts",
   "scripts": {
     "prepare": "is-ci || pnpx husky install",
-    "test": "c8 node -r esbuild-register lib/__tests__/index.ts",
+    "test": "c8 -r lcov node -r esbuild-register lib/__tests__/index.ts",
     "build": "node scripts/build && pnpx tsc --emitDeclarationOnly",
     "lint": "prettier --check .",
     "format": "prettier --write ."
