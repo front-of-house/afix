@@ -1,6 +1,6 @@
 {
   "name": "afix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny fixture utility.",
   "main": "./index.js",
   "types": "index.d.ts",
