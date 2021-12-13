@@ -10,7 +10,7 @@ export type Files = { [alias: string]: { path: string; content: string } }
 
 export function afix(fixtures: Fixtures) {
   const files: Files = {}
-  const root = path.join(__dirname, `./.afix-${customAlphabet('1234567890abcdef', 10)()}`)
+  const root = path.join(process.cwd(), `./.afix-${customAlphabet('1234567890abcdef', 10)()}`)
 
   fs.mkdirSync(root)
 

@@ -9,7 +9,9 @@ test('afix', async () => {
     a: ['a.js', 'export default "foo"'],
   })
 
+  assert.ok(fs.existsSync(fixture.root))
   assert.ok(fs.existsSync(fixture.files.a.path))
+  assert.equal(fs.readFileSync(fixture.files.a.path, 'utf8'), fixture.files.a.content)
 
   fixture.cleanup()
 })

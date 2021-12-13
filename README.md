@@ -26,6 +26,7 @@ test('afix', async () => {
     config: ['config.js', 'export default { foo: true }'],
   })
 
+  assert.ok(fs.existsSync(fixture.root))
   assert(fs.existsSync(fixture.files.config.path))
   assert.equal(fs.readFileSync(fixture.files.config.path), fixture.files.config.content)
 
