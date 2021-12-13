@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Tiny fixture utility.",
   "main": "./index.js",
-  "types": "index.d.ts",
+  "types": "./index.d.ts",
   "scripts": {
     "prepare": "is-ci || pnpx husky install",
     "test": "c8 -r lcov node -r esbuild-register lib/__tests__/index.ts",

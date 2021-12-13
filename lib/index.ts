@@ -1,14 +1,14 @@
-import fs from 'fs'
-import path from 'path'
-import { premove } from 'premove'
-import { customAlphabet } from 'nanoid'
+const fs = require('fs')
+const path = require('path')
+const { premove } = require('premove')
+const { customAlphabet } = require('nanoid')
 
-export type Filepath = string
-export type Content = string
-export type Fixtures = { [alias: string]: [Filepath, Content] }
-export type Files = { [alias: string]: { path: string; content: string } }
+type Filepath = string
+type Content = string
+type Fixtures = { [alias: string]: [Filepath, Content] }
+type Files = { [alias: string]: { path: string; content: string } }
 
-export function afix(fixtures: Fixtures) {
+function afix(fixtures: Fixtures) {
   const files: Files = {}
   const root = path.join(__dirname, `./.afix-${customAlphabet('1234567890abcdef', 10)()}`)
 
@@ -30,3 +30,5 @@ export function afix(fixtures: Fixtures) {
     },
   }
 }
+
+module.exports = { afix }

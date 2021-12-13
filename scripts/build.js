@@ -6,6 +6,6 @@ require('esbuild').buildSync({
   bundle: false,
   minify: true,
   platform: 'node',
-  target: 'node12',
+  target: 'node10',
   logLevel: 'info',
 })
