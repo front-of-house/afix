@@ -1,21 +1,17 @@
-import assert from 'assert'
-import baretest from 'baretest'
 import fs from 'fs'
+import { test } from 'uvu'
+import * as assert from 'uvu/assert'
 
 import { afix } from '../'
 
-const test = baretest('afix')
-
-test('', async () => {
+test('afix', async () => {
   const fixture = afix({
     a: ['a.js', 'export default "foo"'],
   })
 
-  assert(fs.existsSync(fixture.files.a.path))
+  assert.ok(fs.existsSync(fixture.files.a.path))
 
   fixture.cleanup()
 })
 
-!(async () => {
-  await test.run()
-})()
+test.run()
