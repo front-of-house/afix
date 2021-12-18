@@ -10,7 +10,7 @@ specifiers:
   commitlint: ^15.0.0
   esbuild: ^0.13.15
   esbuild-register: ^3.2.0
-  exit-hook: ^3.0.0
+  graceful-goodbye: ^1.0.0
   husky: ^7.0.4
   is-ci: ^3.0.1
   nanoid: ^3.1.30
@@ -21,7 +21,7 @@ specifiers:
   uvu: ^0.5.2
 
 dependencies:
-  exit-hook: 3.0.0
+  graceful-goodbye: 1.0.0
   nanoid: 3.1.30
   premove: 4.0.0
 
@@ -1148,11 +1148,6 @@ packages:
       strip-final-newline: 2.0.0
     dev: true
 
-  /exit-hook/3.0.0:
-    resolution: {integrity: sha512-ElRvnoj3dvOc5WjnQx0CF66rS0xehV6eZdcmqZX17uOLPy3me43frl8UD73Frkx5Aq5kgziMDECjDJR2X1oBFQ==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    dev: false
-
   /fast-glob/3.2.7:
     resolution: {integrity: sha512-rYGMRwip6lUMvYD3BTScMwT1HtAs2d71SMv66Vrxs0IekGZEjhM0pcMfjQPnknBt2zeCwQMEupiN02ZP4DiT1Q==}
     engines: {node: '>=8'}
@@ -1330,6 +1325,10 @@ packages:
   /graceful-fs/4.2.8:
     resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
     dev: true
+
+  /graceful-goodbye/1.0.0:
+    resolution: {integrity: sha512-UpFzBLSpWbQhcW0Dx8u3RKMWoGHKbh0DEK0g/47rgESYrgfMn8ZYf9NGFLaLOZM8ndQqlfIXmqp/PlQ6We7v4Q==}
+    dev: false
 
   /handlebars/4.7.7:
     resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==}

@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/node12/tsconfig.json",
-  "include": ["lib/index.ts"],
+  "include": ["lib/index.ts", "global.d.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "declaration": true,
