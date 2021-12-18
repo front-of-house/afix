@@ -1,7 +1,8 @@
 import fs from 'fs'
 import path from 'path'
-import { premove } from 'premove'
+import { premove } from 'premove/sync'
 import { customAlphabet } from 'nanoid'
+import exit from 'exit-hook'
 
 export type Filepath = string
 export type Content = string
@@ -21,6 +22,8 @@ export function afix(fixtures: Fixtures) {
     }
     fs.writeFileSync(files[alias].path, files[alias].content, 'utf8')
   }
+
+  exit(() => premove(root))
 
   return {
     root,

@@ -14,6 +14,8 @@ test('afix', async () => {
   assert.equal(fs.readFileSync(fixture.files.a.path, 'utf8'), fixture.files.a.content)
 
   fixture.cleanup()
+
+  assert.not.ok(fs.existsSync(fixture.root))
 })
 
 test.run()
