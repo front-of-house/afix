@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "graceful-goodbye": "^1.0.0",
+    "mk-dirs": "^3.0.0",
     "nanoid": "^3.1.30",
     "premove": "^4.0.0"
   }

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import { premove } from 'premove'
+import { premove } from 'premove/sync'
+import { mkdir } from 'mk-dirs/sync'
 import { customAlphabet } from 'nanoid'
 import goodbye from 'graceful-goodbye'
 
@@ -13,17 +14,18 @@ export function afix(fixtures: Fixtures) {
   const files: Files = {}
   const root = path.join(process.cwd(), `./.afix-${customAlphabet('1234567890abcdef', 10)()}`)
 
-  fs.mkdirSync(root)
+  mkdir(root)
 
   for (const alias of Object.keys(fixtures)) {
     files[alias] = {
       path: path.join(root, fixtures[alias][0]),
       content: fixtures[alias][1],
     }
+    mkdir(path.dirname(files[alias].path))
     fs.writeFileSync(files[alias].path, files[alias].content, 'utf8')
   }
 
-  goodbye(async () => premove(root))
+  goodbye(() => premove(root))
 
   return {
     root,

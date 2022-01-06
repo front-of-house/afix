@@ -13,6 +13,7 @@ specifiers:
   graceful-goodbye: ^1.0.0
   husky: ^7.0.4
   is-ci: ^3.0.1
+  mk-dirs: ^3.0.0
   nanoid: ^3.1.30
   premove: ^4.0.0
   prettier: ^2.5.0
@@ -22,6 +23,7 @@ specifiers:
 
 dependencies:
   graceful-goodbye: 1.0.0
+  mk-dirs: 3.0.0
   nanoid: 3.1.30
   premove: 4.0.0
 
@@ -1812,6 +1814,11 @@ packages:
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: true
+
+  /mk-dirs/3.0.0:
+    resolution: {integrity: sha512-FEZDdUFb88hgdnsfAPa4VxcPVOd+8GyZ2jsI965im5bjBlBYhrvXuTqLka/UHa6YdUNN/kZBsVgofhZ3322AJw==}
+    engines: {node: '>=6'}
+    dev: false
 
   /modify-values/1.0.1:
     resolution: {integrity: sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==}
