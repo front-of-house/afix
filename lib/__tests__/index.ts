@@ -9,11 +9,13 @@ test('afix', async () => {
     a: ['a.js', 'export default "foo"'],
     nested: ['nested/a.js', ''],
   })
+  const dir = fixture.mkdir('some/nested/dir')
 
   assert.ok(fs.existsSync(fixture.root))
   assert.ok(fs.existsSync(fixture.files.a.path))
   assert.equal(fs.readFileSync(fixture.files.a.path, 'utf8'), fixture.files.a.content)
   assert.ok(fs.existsSync(fixture.files.nested.path))
+  assert.ok(fs.existsSync(dir))
 
   fixture.cleanup()
 

@@ -30,6 +30,11 @@ export function afix(fixtures: Fixtures) {
   return {
     root,
     files,
+    mkdir(directory: string) {
+      const dir = path.join(root, directory)
+      mkdir(dir)
+      return path.join(dir)
+    },
     cleanup() {
       return premove(root)
     },

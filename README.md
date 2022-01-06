@@ -10,29 +10,42 @@ npm i afix
 
 ## Usage
 
-Afix creates directories and files within `__dirname` of the calling file. Be
-sure to call `cleanup()` at the end of each test to remove all your fixtures.
+Each call to `afix()` creates a new directory in `process.cwd()` and writes
+files within the new directory.
 
 ```typescript
 import fs from 'fs'
-import assert from 'assert'
-import baretest from 'baretest'
 import { afix } from 'afix'
 
-const test = baretest('afix')
-
-test('afix', async () => {
-  const fixture = afix({
-    config: ['config.js', 'export default { foo: true }'],
-  })
-
-  assert.ok(fs.existsSync(fixture.root))
-  assert(fs.existsSync(fixture.files.config.path))
-  assert.equal(fs.readFileSync(fixture.files.config.path), fixture.files.config.content)
-
-  fixture.cleanup()
+const fixture = afix({
+  config: ['config.js', 'export default { foo: true }'],
+  nested: ['some/path/file.js'],
 })
+const dir = fixture.mkdir('/some/dir')
+
+fs.existsSync(fixture.root) // true
+
+fs.existsSync(fixture.files.config.path) // true
+assert.equal(
+  fs.readFileSync(fixture.files.config.path, 'utf8'),
+  fixture.files.config.content
+)
+
+fs.existsSync(fixture.files.nested.path) // true
+assert.equal(
+  fs.readFileSync(fixture.files.nested.path, 'utf8'),
+  fixture.files.nested.content
+)
+
+fs.existsSync(dir) // true
+
+// remove fixture.root
+fixture.cleanup()
+
+fs.existsSync(fixture.root) // false
 ```
+
+Plus, fixtures are automaticaly removed when the process exits.
 
 ## License
 
