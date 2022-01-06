@@ -26,16 +26,10 @@ const dir = fixture.mkdir('/some/dir')
 fs.existsSync(fixture.root) // true
 
 fs.existsSync(fixture.files.config.path) // true
-assert.equal(
-  fs.readFileSync(fixture.files.config.path, 'utf8'),
-  fixture.files.config.content
-)
+assert.equal(fs.readFileSync(fixture.files.config.path, 'utf8'), fixture.files.config.content)
 
 fs.existsSync(fixture.files.nested.path) // true
-assert.equal(
-  fs.readFileSync(fixture.files.nested.path, 'utf8'),
-  fixture.files.nested.content
-)
+assert.equal(fs.readFileSync(fixture.files.nested.path, 'utf8'), fixture.files.nested.content)
 
 fs.existsSync(dir) // true
 
